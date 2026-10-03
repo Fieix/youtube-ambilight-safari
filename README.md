@@ -1,21 +1,31 @@
-# Ambient Light for YouTube, сборка под Safari
+# Ambient Light for YouTube, Safari
 
-Личное расширение. Свечение вокруг плеера на youtube.com/watch.
-Кадр ролика один раз рисуется в центр, наружу уходит кромка. Размытие накладывается уже после растягивания, поэтому ползунок Blur её смягчает. Если Safari кадр не отдаёт, тот же приём делается с одного снимка плеера.
+Soft light around the YouTube player, in the color of the frame you are watching. Personal Safari build of [youtube-ambilight](https://github.com/WesselKroos/youtube-ambilight) by Wessel Kroos.
 
-## Как включить (Safari 26)
+![Ambient light around a video frame](docs/banner.jpg)
 
-1. Распакуй архив. Внутри должна лежать папка с `manifest.json`.
-2. Safari → Settings → Advanced → включи Show features for web developers.
-3. Safari → Settings → Developer → включи Allow Unsigned Extensions.
-4. Меню Develop → Add Temporary Extension… → выбери эту папку.
-5. Открой любое видео на youtube.com.
+## What it does
 
-Расширение временное: после выхода из Safari его надо добавить заново.
-Пункт Allow Unsigned Extensions тоже сбрасывается при выходе.
+The glow continues the edge of the video out onto the page. It is not a second copy of the picture behind the player. An **AL** button in the player opens the same kind of controls as the original: blur, spread, color filters, which sides to light, and view modes.
 
-Если в меню Develop нет Add Temporary Extension, эта Safari старее. Тогда папку само не подхватит, нужен Xcode: `xcrun safari-web-extension-packager` на эту папку, и Run с бесплатным Apple ID.
+This build does not include black-bar detection, page shadows, or the original stats panel.
 
-Кнопка AL в плеере и иконка расширения открывают настройки: Blur, Spread, фильтры, стороны, кадры и режимы. Это те же пункты, что в оригинале. Чёрные полосы, тени страницы и статистика в эту сборку не входят.
+## Install in Safari
 
-Основано на [youtube-ambilight](https://github.com/WesselKroos/youtube-ambilight) Wessel Kroos, лицензия ISC.
+Tested as a temporary extension. After you quit Safari you add the folder again.
+
+1. Download this repository and keep the folder that contains `manifest.json`.
+2. Safari → Settings → Advanced → turn on **Show features for web developers**.
+3. Safari → Settings → Developer → turn on **Allow Unsigned Extensions**.
+4. Develop → **Add Temporary Extension…** and choose that folder.
+5. Open any video on youtube.com.
+
+If Develop has no **Add Temporary Extension**, this Safari is older. Pack the folder with `xcrun safari-web-extension-packager` and run it from Xcode with a free Apple ID. A free signature lasts about a week.
+
+## Settings
+
+The **AL** button and the toolbar icon open the same panel. **Buttons & boxes background opacity** fades the description card under the player. The original default is 10. Zero makes that card clear. Below zero fills it darker.
+
+## Credit
+
+Based on [Wessel Kroos / youtube-ambilight](https://github.com/WesselKroos/youtube-ambilight). The license in this repository is the original MIT license.
